@@ -295,6 +295,47 @@ body {
   font-family: "Alef", sans-serif;
 }
 
+.translation-box {
+  margin-top: 0.85rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--accent-soft) 50%, white);
+}
+
+.translation-title {
+  margin: 0;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.translation-list {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.translation-list a {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.translation-list a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .essay-content {
   font-size: 1.08rem;
 }

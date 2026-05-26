@@ -17,6 +17,43 @@ layout: default
         {% endfor %}
       </ul>
     {% endif %}
+
+    {% assign all_items = site.essays_he | concat: site.essays_it | concat: site.essays_en %}
+    {% if page.translation_key %}
+      {% assign translation_count = 0 %}
+      {% for item in all_items %}
+        {% if item.translation_key == page.translation_key and item.url != page.url %}
+          {% assign translation_count = translation_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if translation_count > 0 %}
+        <section class="translation-box" aria-label="Other language versions">
+          {% if page.lang == 'he' %}
+            <p class="translation-title">גרסאות בשפות נוספות:</p>
+          {% elsif page.lang == 'it' %}
+            <p class="translation-title">Versioni in altre lingue:</p>
+          {% else %}
+            <p class="translation-title">Read this in other languages:</p>
+          {% endif %}
+          <ul class="translation-list">
+            {% for item in all_items %}
+              {% if item.translation_key == page.translation_key and item.url != page.url %}
+                {% assign lang_label = item.lang | upcase %}
+                {% if item.lang == 'he' %}
+                  {% assign lang_label = 'עברית' %}
+                {% elsif item.lang == 'it' %}
+                  {% assign lang_label = 'Italiano' %}
+                {% elsif item.lang == 'en' %}
+                  {% assign lang_label = 'English' %}
+                {% endif %}
+                <li><a href="{{ item.url | relative_url }}">{{ lang_label }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+    {% endif %}
   </header>
   <section class="essay-content">
     {{ content }}

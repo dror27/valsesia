@@ -7,6 +7,7 @@ tags:
 	- paesaggio
 	- cammino
 	- riflessione
+translation_key: opening-valley
 ---
 
 Valsesia invita a camminare lentamente e a osservare con attenzione. In queste pagine, la riflessione nasce dal paesaggio.

@@ -7,6 +7,7 @@ tags:
 	- landscape
 	- walking
 	- reflection
+translation_key: opening-valley
 ---
 
 Valsesia asks for a slower rhythm of attention. These essays follow that rhythm and test how place can shape language.
