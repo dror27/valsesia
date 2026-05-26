@@ -401,6 +401,20 @@ button:focus-visible {
   padding-top: 0.75rem;
 }
 
+html[lang="he"] body {
+  font-size: 1.03rem;
+}
+
+html[lang="he"] .hero h1,
+html[lang="he"] .essay-head h1 {
+  letter-spacing: 0.012em;
+}
+
+html[lang="he"] .essay-content {
+  font-size: 1.14rem;
+  line-height: 1.82;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
