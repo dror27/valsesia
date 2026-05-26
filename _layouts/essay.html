@@ -10,6 +10,13 @@ layout: default
         · {{ page.summary }}
       {% endif %}
     </p>
+    {% if page.tags %}
+      <ul class="topic-list">
+        {% for topic in page.tags %}
+          <li><a href="{{ '/topics/#' | append: topic | slugify | relative_url }}">{{ topic }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </header>
   <section class="essay-content">
     {{ content }}

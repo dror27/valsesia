@@ -4,12 +4,17 @@
       <span class="brand-title">{{ site.title }}</span>
       <span class="brand-tagline">{{ site.description }}</span>
     </a>
-    <nav class="top-nav" aria-label="Main navigation">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/contents/' | relative_url }}">Contents</a>
-      <a href="{{ '/he/' | relative_url }}">עברית</a>
-      <a href="{{ '/it/' | relative_url }}">Italiano</a>
-      <a href="{{ '/en/' | relative_url }}">English</a>
-    </nav>
+    <div class="nav-stack">
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/contents/' | relative_url }}">Contents</a>
+        <a href="{{ '/topics/' | relative_url }}">Topics</a>
+      </nav>
+      <nav class="lang-switcher" aria-label="Language switcher">
+        <a class="lang-link" href="{{ '/he/' | relative_url }}" data-lang-link="he">עברית</a>
+        <a class="lang-link" href="{{ '/it/' | relative_url }}" data-lang-link="it">Italiano</a>
+        <a class="lang-link" href="{{ '/en/' | relative_url }}" data-lang-link="en">English</a>
+      </nav>
+    </div>
   </div>
 </header>

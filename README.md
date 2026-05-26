@@ -14,6 +14,15 @@ A small multilingual essays site, designed for GitHub Pages.
 - `assets/css/style.css` site styles
 - `index.md` home page (recent items)
 - `contents.md` table of contents by language
+- `topics.md` topic/tag index page
+
+## Features
+
+- Language switcher remembers the reader's preferred language.
+- Home page supports two views:
+   - `Abstracts` (default): longer summaries
+   - `Compact`: denser list view
+- Topic system based on `tags` front matter.
 
 ## Local Preview (optional)
 
@@ -49,6 +58,10 @@ Use front matter like:
 title: "כותרת המאמר"
 date: 2026-05-27
 summary: "תקציר קצר"
+long_summary: "תקציר ארוך יותר לדף הבית במצב Abstracts"
+tags:
+   - נושא-אחד
+   - נושא-שתיים
 ---
 
 Then write your text in Markdown below.

@@ -2,6 +2,11 @@
 title: "Opening: Entering the Valley"
 date: 2026-05-27
 summary: "A short note on pace, landscape, and thought in Valsesia."
+long_summary: "An opening reflection on how slower attention in Valsesia shapes language, memory, and the tone of each essay."
+tags:
+	- landscape
+	- walking
+	- reflection
 ---
 
 Valsesia asks for a slower rhythm of attention. These essays follow that rhythm and test how place can shape language.

@@ -13,5 +13,82 @@
       {{ content }}
     </main>
     {% include footer.html %}
+    <script>
+      (function () {
+        var languageKey = "valsesiaPreferredLanguage";
+        var modeKey = "valsesiaHomeMode";
+        var currentLang = document.documentElement.lang || "he";
+        var langLinks = document.querySelectorAll("[data-lang-link]");
+
+        langLinks.forEach(function (link) {
+          var linkLang = link.getAttribute("data-lang-link");
+          if (linkLang === currentLang) {
+            link.classList.add("is-active");
+          }
+
+          link.addEventListener("click", function () {
+            try {
+              localStorage.setItem(languageKey, linkLang);
+            } catch (err) {
+              // No-op if storage is blocked.
+            }
+          });
+        });
+
+        var preferredLanguage = null;
+        try {
+          preferredLanguage = localStorage.getItem(languageKey);
+        } catch (err) {
+          preferredLanguage = null;
+        }
+
+        if (preferredLanguage) {
+          var preferredLink = document.querySelector("[data-preferred-lang-link]");
+          if (preferredLink) {
+            var baseUrl = preferredLink.getAttribute("data-preferred-lang-link");
+            preferredLink.setAttribute("href", baseUrl + preferredLanguage + "/");
+            preferredLink.hidden = false;
+            preferredLink.textContent = "Go to preferred language";
+          }
+        }
+
+        var modeButtons = document.querySelectorAll("[data-mode-button]");
+        var modeTarget = document.querySelector("[data-home-mode-target]");
+
+        if (modeButtons.length > 0 && modeTarget) {
+          var defaultMode = modeTarget.getAttribute("data-home-mode-default") || "abstracts";
+          var activeMode = defaultMode;
+
+          try {
+            activeMode = localStorage.getItem(modeKey) || defaultMode;
+          } catch (err) {
+            activeMode = defaultMode;
+          }
+
+          var setMode = function (mode) {
+            modeTarget.setAttribute("data-home-mode-target", mode);
+            modeButtons.forEach(function (btn) {
+              var isActive = btn.getAttribute("data-mode-button") === mode;
+              btn.classList.toggle("is-active", isActive);
+              btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
+
+            try {
+              localStorage.setItem(modeKey, mode);
+            } catch (err) {
+              // No-op if storage is blocked.
+            }
+          };
+
+          setMode(activeMode);
+
+          modeButtons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              setMode(btn.getAttribute("data-mode-button"));
+            });
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
