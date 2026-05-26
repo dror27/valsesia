@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Assistant:wght@400;600;700&family=Crimson+Pro:opsz,wght@8..144,400;8..144,600&display=swap');
+
+:root {
+  --bg: #f2eee8;
+  --paper: #fffdf8;
+  --ink: #23201d;
+  --muted: #6a6057;
+  --accent: #2f6b5f;
+  --accent-soft: #e3efe9;
+  --border: #d9d1c8;
+  --shadow: 0 10px 28px rgba(35, 32, 29, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, #efe4d4 0, transparent 32%),
+    radial-gradient(circle at 90% 10%, #e5efe8 0, transparent 28%),
+    var(--bg);
+  font-family: "Crimson Pro", Georgia, serif;
+  line-height: 1.75;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: color-mix(in oklab, var(--paper) 88%, white);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-title {
+  font-family: "Alef", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand-tagline {
+  font-family: "Assistant", sans-serif;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 180ms ease;
+}
+
+.top-nav a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.page-shell {
+  max-width: 980px;
+  margin: 1.6rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.hero,
+.list-card,
+.essay-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 1.4rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Alef", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.hero p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-family: "Assistant", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 1rem;
+}
+
+.list-card {
+  padding: 1rem;
+}
+
+.list-card h2 {
+  margin-top: 0;
+  font-family: "Assistant", sans-serif;
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-list li + li {
+  margin-top: 0.95rem;
+  padding-top: 0.95rem;
+  border-top: 1px dashed var(--border);
+}
+
+.entry-list a {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+}
+
+.tag {
+  display: inline-block;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  margin-inline-start: 0.35rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-family: "Assistant", sans-serif;
+}
+
+.essay-card {
+  padding: 1.4rem 1.2rem;
+}
+
+.essay-head h1 {
+  margin: 0 0 0.3rem;
+  font-family: "Alef", sans-serif;
+}
+
+.essay-content {
+  font-size: 1.08rem;
+}
+
+.essay-content p {
+  margin-top: 0;
+}
+
+.site-footer {
+  max-width: 980px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  color: var(--muted);
+  font-family: "Assistant", sans-serif;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

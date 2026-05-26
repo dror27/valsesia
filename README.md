@@ -1,0 +1,54 @@
+# עמוק בעמק
+
+הגות בוולססיה
+
+A small multilingual essays site, designed for GitHub Pages.
+
+## Structure
+
+- `_essays_he/` Hebrew essays (RTL)
+- `_essays_it/` Italian essays
+- `_essays_en/` English essays
+- `_layouts/` shared page and essay layouts
+- `_includes/` reusable header/footer templates
+- `assets/css/style.css` site styles
+- `index.md` home page (recent items)
+- `contents.md` table of contents by language
+
+## Local Preview (optional)
+
+1. Install Ruby and Bundler.
+2. Run:
+
+   bundle install
+   bundle exec jekyll serve
+
+3. Open http://127.0.0.1:4000
+
+## Publish With GitHub Pages
+
+1. Create a new public repository on GitHub named `valsesia`.
+2. Push this folder to `main`.
+3. In GitHub repository settings, enable Pages from:
+   - Branch: `main`
+   - Folder: `/ (root)`
+4. Wait for deployment, then open:
+   https://<your-username>.github.io/valsesia/
+
+## Add New Essays
+
+Add a new Markdown file in the relevant collection folder, for example:
+
+- `_essays_he/מסע-בוואלססיה.md`
+- `_essays_it/viaggio-in-valsesia.md`
+- `_essays_en/journey-in-valsesia.md`
+
+Use front matter like:
+
+---
+title: "כותרת המאמר"
+date: 2026-05-27
+summary: "תקציר קצר"
+---
+
+Then write your text in Markdown below.

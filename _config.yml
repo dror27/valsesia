@@ -1,0 +1,43 @@
+title: "עמוק בעמק"
+description: "הגות בוולססיה"
+lang: he
+timezone: Europe/Rome
+markdown: kramdown
+permalink: pretty
+
+collections:
+  essays_he:
+    output: true
+    permalink: /he/:path/
+  essays_it:
+    output: true
+    permalink: /it/:path/
+  essays_en:
+    output: true
+    permalink: /en/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: essays_he
+    values:
+      layout: essay
+      lang: he
+      dir: rtl
+  - scope:
+      path: ""
+      type: essays_it
+    values:
+      layout: essay
+      lang: it
+      dir: ltr
+  - scope:
+      path: ""
+      type: essays_en
+    values:
+      layout: essay
+      lang: en
+      dir: ltr
+
+exclude:
+  - README.md
