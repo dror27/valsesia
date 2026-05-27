@@ -10,6 +10,8 @@ translation_key: pasolini_valsesia_remote_work
 related_reading:
   - title: "Pier Paolo Pasolini - Wikipedia"
     url: "https://en.wikipedia.org/wiki/Pier_Paolo_Pasolini"
+  - title: "Remote Work and Simple Life Paradox - Deep Dive (audio)"
+    url: "https://soundcloud.com/drorkessler/remote_work_and_simple_life_pa"
 footer_image: "/assets/images/pasolini-modern-simplicity-footer.png"
 footer_image_alt: "The Paradox of Modern Simplicity"
 ---

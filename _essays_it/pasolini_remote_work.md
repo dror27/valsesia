@@ -10,6 +10,8 @@ translation_key: pasolini_valsesia_remote_work
 related_reading:
   - title: "Pier Paolo Pasolini - Wikipedia italiana"
     url: "https://it.wikipedia.org/wiki/Pier_Paolo_Pasolini"
+  - title: "Siamo arrivati piano (audio)"
+    url: "https://soundcloud.com/drorkessler/siamo-arrivati-piano"
 ---
 
 La celebre “glorificazione” dei poveri e dei “non sviluppati” operata da Pier Paolo Pasolini ha sempre suscitato disagio. È stata spesso liquidata come una romantizzazione problematica, come una proiezione borghese su vite altrui, o come una posizione reazionaria mascherata da critica di sinistra. Eppure Pasolini non celebrava la miseria, né auspicava la conservazione della sofferenza o della mancanza. Il suo intento era un altro: diagnosticare una frattura storica, una violenza antropologica esercitata dalla modernizzazione — e in particolare dal capitalismo dei consumi — sulle forme di vita non ancora completamente modellate dall’efficienza, dalla standardizzazione e dal desiderio mercificato. L’oggetto di Pasolini non è la povertà come condizione economica, ma il sottosviluppo come condizione esistenziale e culturale differente. In questa prospettiva, la Valsesia (VC) non è solo un termine di paragone, ma un vero e proprio laboratorio contemporaneo in cui le domande pasoliniane assumono una nuova configurazione.
