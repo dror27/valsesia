@@ -9,6 +9,9 @@ tags:
   - walking
   - reflection
 translation_key: opening-valley
+related_reading:
+  - title: "Valsesia - Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Valsesia"
 ---
 
 Valsesia asks for a slower rhythm of attention. These essays follow that rhythm and test how place can shape language.

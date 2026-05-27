@@ -9,6 +9,9 @@ tags:
   - cammino
   - riflessione
 translation_key: opening-valley
+related_reading:
+  - title: "Valsesia - Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Valsesia"
 ---
 
 Valsesia invita a camminare lentamente e a osservare con attenzione. In queste pagine, la riflessione nasce dal paesaggio.

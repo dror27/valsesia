@@ -385,6 +385,36 @@ button:focus-visible {
   color: var(--accent);
 }
 
+.related-box {
+  margin-top: 0.85rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--paper) 84%, white);
+}
+
+.related-title {
+  margin: 0;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.related-list {
+  margin: 0.5rem 0 0;
+  padding-inline-start: 1.15rem;
+}
+
+.related-list li + li {
+  margin-top: 0.3rem;
+}
+
+.related-list a {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.12rem;
+}
+
 .essay-content {
   font-size: 1.08rem;
 }
