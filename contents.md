@@ -13,7 +13,7 @@ permalink: /contents/
     {% for item in he_items %}
       <li>
         <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
-        <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
+        <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.author %} · מאת {{ item.author }}{% endif %}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
       </li>
     {% endfor %}
   </ul>
@@ -26,7 +26,7 @@ permalink: /contents/
     {% for item in it_items %}
       <li>
         <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
-        <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
+        <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.author %} · di {{ item.author }}{% endif %}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
       </li>
     {% endfor %}
   </ul>
@@ -39,7 +39,7 @@ permalink: /contents/
     {% for item in en_items %}
       <li>
         <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
-        <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
+        <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.author %} · by {{ item.author }}{% endif %}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
       </li>
     {% endfor %}
   </ul>

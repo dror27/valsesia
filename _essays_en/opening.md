@@ -3,10 +3,11 @@ title: "Opening: Entering the Valley"
 date: 2026-05-27
 summary: "A short note on pace, landscape, and thought in Valsesia."
 long_summary: "An opening reflection on how slower attention in Valsesia shapes language, memory, and the tone of each essay."
+author: "Dror Kessler"
 tags:
-	- landscape
-	- walking
-	- reflection
+  - landscape
+  - walking
+  - reflection
 translation_key: opening-valley
 ---
 

@@ -3,10 +3,11 @@ title: "Apertura: Entrare nella valle"
 date: 2026-05-27
 summary: "Una prima riflessione sul ritmo di Valsesia."
 long_summary: "Un testo introduttivo sul passo lento della valle e su come il paesaggio possa diventare metodo di pensiero."
+author: "Dror Kessler"
 tags:
-	- paesaggio
-	- cammino
-	- riflessione
+  - paesaggio
+  - cammino
+  - riflessione
 translation_key: opening-valley
 ---
 
