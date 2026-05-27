@@ -10,7 +10,9 @@ permalink: /topics/
 {% assign tags_csv = '' %}
 {% for item in all_items %}
   {% if item.tags %}
-    {% assign tags_csv = tags_csv | append: item.tags | join: '|' | append: '|' %}
+    {% for topic in item.tags %}
+      {% assign tags_csv = tags_csv | append: topic | append: '|' %}
+    {% endfor %}
   {% endif %}
 {% endfor %}
 {% assign all_tags = tags_csv | split: '|' | uniq | sort %}
