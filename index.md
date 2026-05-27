@@ -15,8 +15,9 @@ dir: rtl
 {% assign all_tags = tags_csv | split: '|' | uniq | sort %}
 
 <section class="hero" lang="he" dir="rtl">
-  <h1>עמוק בעמק</h1>
-  <p>הגות בוולססיה · אסופות של מסות, רשימות והרהורים.</p>
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+  <p>אסופות של מסות, רשימות והרהורים.</p>
   <div class="hero-actions">
     <a class="preferred-link" data-preferred-lang-link="{{ '/' | relative_url }}" href="#" hidden>Go to preferred language</a>
     <div class="mode-switch" role="group" aria-label="Homepage view mode">
