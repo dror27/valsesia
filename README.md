@@ -30,19 +30,9 @@ A small multilingual essays site, designed for GitHub Pages.
 2. Run:
 
    bundle install
-   bundle exec jekyll serve
+   bundle exec jekyll serve --baseurl ""
 
 3. Open http://127.0.0.1:4000
-
-## Publish With GitHub Pages
-
-1. Create a new public repository on GitHub named `valsesia`.
-2. Push this folder to `main`.
-3. In GitHub repository settings, enable Pages from:
-   - Branch: `main`
-   - Folder: `/ (root)`
-4. Wait for deployment, then open:
-   https://<your-username>.github.io/valsesia/
 
 ## Add New Essays
 
@@ -52,6 +42,8 @@ Add a new Markdown file in the relevant collection folder, for example:
 - `_essays_it/viaggio-in-valsesia.md`
 - `_essays_en/journey-in-valsesia.md`
 
+Please try to use ASCII characters for all filenames and tags.
+
 Use front matter like:
 
 ---
@@ -60,8 +52,8 @@ date: 2026-05-27
 summary: "תקציר קצר"
 long_summary: "תקציר ארוך יותר לדף הבית במצב Abstracts"
 tags:
-   - נושא-אחד
-   - נושא-שתיים
+   - living
+   - love
 ---
 
 Then write your text in Markdown below.

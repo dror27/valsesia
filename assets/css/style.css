@@ -526,6 +526,25 @@ html[lang="he"] .essay-content {
   }
 }
 
+.song-lyrics {
+  font-family: Georgia, serif;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  margin: 2em 0;
+  padding: 1em;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @media (max-width: 860px) {
   body {
     background-attachment: scroll, scroll, scroll, scroll, scroll;
