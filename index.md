@@ -49,7 +49,7 @@ dir: rtl
           {% if item.tags %}
             <ul class="topic-list">
               {% for topic in item.tags limit: 4 %}
-                <li><a href="{{ '/topics/#' | append: topic | slugify | relative_url }}">{{ topic }}</a></li>
+                <li><a href="{{ '/topics/' | relative_url }}#{{ topic | slugify }}">{{ topic }}</a></li>
               {% endfor %}
             </ul>
           {% endif %}
@@ -81,7 +81,7 @@ dir: rtl
     <ul class="topic-list">
       {% for topic in all_tags limit: 10 %}
         {% unless topic == '' %}
-          <li><a href="{{ '/topics/#' | append: topic | slugify | relative_url }}">{{ topic }}</a></li>
+          <li><a href="{{ '/topics/' | relative_url }}#{{ topic | slugify }}">{{ topic }}</a></li>
         {% endunless %}
       {% endfor %}
     </ul>
