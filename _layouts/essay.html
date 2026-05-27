@@ -64,24 +64,24 @@ layout: default
       {% endif %}
     {% endif %}
 
-    {% if page.related_reading %}
-      <section class="related-box" aria-label="Related reading links">
-        {% if page.lang == 'he' %}
-          <p class="related-title">קריאה נוספת:</p>
-        {% elsif page.lang == 'it' %}
-          <p class="related-title">Letture correlate:</p>
-        {% else %}
-          <p class="related-title">Related Reading:</p>
-        {% endif %}
-        <ul class="related-list">
-          {% for resource in page.related_reading %}
-            <li><a href="{{ resource.url }}" target="_blank" rel="noopener noreferrer">{{ resource.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </section>
-    {% endif %}
   </header>
   <section class="essay-content">
     {{ content }}
   </section>
+  {% if page.related_reading %}
+    <section class="related-box" aria-label="Related reading links">
+      {% if page.lang == 'he' %}
+        <p class="related-title">קריאה נוספת:</p>
+      {% elsif page.lang == 'it' %}
+        <p class="related-title">Letture correlate:</p>
+      {% else %}
+        <p class="related-title">Related Reading:</p>
+      {% endif %}
+      <ul class="related-list">
+        {% for resource in page.related_reading %}
+          <li><a href="{{ resource.url }}" target="_blank" rel="noopener noreferrer">{{ resource.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
 </article>
