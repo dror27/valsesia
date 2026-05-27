@@ -1,6 +1,8 @@
 title: "עמוק בעמק · Nel profondo della valle"
 description: "הגות בוולססיה · Riflessioni in Valsesia"
 lang: he
+url: "https://dror27.github.io"
+baseurl: "/valsesia"
 timezone: Europe/Rome
 markdown: kramdown
 permalink: pretty
