@@ -2,7 +2,7 @@
 layout: default
 title: Topics
 lang: en
-dir: ltr
+text_dir: ltr
 permalink: /topics/
 ---
 
@@ -32,10 +32,15 @@ permalink: /topics/
   {% unless topic == '' %}
     <section class="list-card topic-anchor" style="margin-top: 1rem;" id="{{ topic | slugify }}">
       <h2>{{ topic }}</h2>
-      <ul class="entry-list">
+      <ul class="entry-list" data-deduplicate-translations>
         {% for item in all_items %}
           {% if item.tags contains topic %}
-            <li lang="{{ item.lang | default: 'he' }}" dir="{{ item.dir | default: 'ltr' }}">
+            <li
+              lang="{{ item.lang | default: 'he' }}"
+              dir="{{ item.text_dir | default: 'ltr' }}"
+              {% if item.translation_key %}data-translation-group="{{ item.translation_key }}"{% endif %}
+              data-entry-lang="{{ item.lang | default: 'he' }}"
+            >
               <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
               <span class="tag">{{ item.lang | upcase }}</span>
               <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.author %} · {{ item.author }}{% endif %}{% if item.summary %} · {{ item.summary }}{% endif %}</div>

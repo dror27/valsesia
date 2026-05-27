@@ -2,7 +2,7 @@
 layout: default
 title: Contents
 lang: en
-dir: ltr
+text_dir: ltr
 permalink: /contents/
 ---
 

@@ -23,21 +23,21 @@ defaults:
     values:
       layout: essay
       lang: he
-      dir: rtl
+      text_dir: rtl
   - scope:
       path: ""
       type: essays_it
     values:
       layout: essay
       lang: it
-      dir: ltr
+      text_dir: ltr
   - scope:
       path: ""
       type: essays_en
     values:
       layout: essay
       lang: en
-      dir: ltr
+      text_dir: ltr
 
 exclude:
   - README.md

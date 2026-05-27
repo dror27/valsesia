@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'he' }}" dir="{{ page.dir | default: 'ltr' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'he' }}" dir="{{ page.text_dir | default: 'ltr' }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -51,6 +51,174 @@
             preferredLink.textContent = "Go to preferred language";
           }
         }
+
+        var resolvePreferredLanguage = function () {
+          if (preferredLanguage) {
+            return preferredLanguage;
+          }
+
+          var browserLanguage = (navigator.language || "").toLowerCase();
+          if (browserLanguage.indexOf("he") === 0) {
+            return "he";
+          }
+          if (browserLanguage.indexOf("it") === 0) {
+            return "it";
+          }
+          if (browserLanguage.indexOf("en") === 0) {
+            return "en";
+          }
+
+          return currentLang;
+        };
+
+        var interfaceText = {
+          he: {
+            availableIn: "זמין גם ב:",
+          },
+          it: {
+            availableIn: "Disponibile anche in:",
+          },
+          en: {
+            availableIn: "Also available in:",
+          },
+        };
+
+        var languageLabels = {
+          he: "עברית",
+          it: "Italiano",
+          en: "English",
+        };
+
+        var getInterfaceText = function (key, lang) {
+          var languageText = interfaceText[lang] || interfaceText.en;
+          return languageText[key] || interfaceText.en[key] || "";
+        };
+
+        var getLanguageLabel = function (lang) {
+          return languageLabels[lang] || String(lang || "").toUpperCase();
+        };
+
+        var storePreferredLanguage = function (lang) {
+          try {
+            localStorage.setItem(languageKey, lang);
+          } catch (err) {
+            // No-op if storage is blocked.
+          }
+        };
+
+        var buildTranslationLinks = function (bestItem, groupItems) {
+          var existing = bestItem.querySelector("[data-generated-translation-links]");
+          if (existing) {
+            existing.remove();
+          }
+
+          var staticTag = bestItem.querySelector(".tag");
+          if (staticTag) {
+            staticTag.hidden = true;
+          }
+
+          var wrapper = document.createElement("div");
+          wrapper.className = "translation-inline";
+          wrapper.setAttribute("data-generated-translation-links", "true");
+
+          var label = document.createElement("span");
+          label.className = "translation-inline-label";
+          label.textContent = getInterfaceText(
+            "availableIn",
+            bestItem.getAttribute("data-entry-lang") || currentLang
+          );
+          wrapper.appendChild(label);
+
+          var links = document.createElement("div");
+          links.className = "translation-link-row";
+
+          groupItems.forEach(function (item) {
+            var entryLang = item.getAttribute("data-entry-lang") || "";
+            var titleLink = item.querySelector("a");
+            if (!titleLink) {
+              return;
+            }
+
+            if (item === bestItem) {
+              return;
+            }
+
+            var otherLink = document.createElement("a");
+            otherLink.className = "translation-pill";
+            otherLink.href = titleLink.getAttribute("href");
+            otherLink.textContent = getLanguageLabel(entryLang);
+            otherLink.addEventListener("click", function () {
+              storePreferredLanguage(entryLang);
+            });
+            links.appendChild(otherLink);
+          });
+
+          wrapper.appendChild(links);
+
+          var metaNode = bestItem.querySelector(".meta");
+          if (metaNode) {
+            metaNode.insertAdjacentElement("afterend", wrapper);
+          } else {
+            bestItem.appendChild(wrapper);
+          }
+        };
+
+        var deduplicateTranslationLists = function () {
+          var preferredEntryLanguage = resolvePreferredLanguage();
+          var lists = document.querySelectorAll("[data-deduplicate-translations]");
+
+          lists.forEach(function (list) {
+            var groups = new Map();
+            var items = list.querySelectorAll("li[data-translation-group]");
+
+            items.forEach(function (item) {
+              var groupKey = item.getAttribute("data-translation-group");
+              if (!groupKey) {
+                return;
+              }
+
+              if (!groups.has(groupKey)) {
+                groups.set(groupKey, []);
+              }
+
+              groups.get(groupKey).push(item);
+            });
+
+            groups.forEach(function (groupItems) {
+              if (groupItems.length < 2) {
+                return;
+              }
+
+              var bestItem = null;
+
+              groupItems.forEach(function (item) {
+                if (item.getAttribute("data-entry-lang") === preferredEntryLanguage && !bestItem) {
+                  bestItem = item;
+                }
+              });
+
+              if (!bestItem) {
+                groupItems.forEach(function (item) {
+                  if (item.getAttribute("data-entry-lang") === currentLang && !bestItem) {
+                    bestItem = item;
+                  }
+                });
+              }
+
+              if (!bestItem) {
+                bestItem = groupItems[0];
+              }
+
+              groupItems.forEach(function (item) {
+                item.hidden = item !== bestItem;
+              });
+
+              buildTranslationLinks(bestItem, groupItems);
+            });
+          });
+        };
+
+        deduplicateTranslationLists();
 
         var modeButtons = document.querySelectorAll("[data-mode-button]");
         var modeTarget = document.querySelector("[data-home-mode-target]");

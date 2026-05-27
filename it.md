@@ -2,7 +2,7 @@
 layout: default
 title: Italiano
 lang: it
-dir: ltr
+text_dir: ltr
 permalink: /it/
 ---
 

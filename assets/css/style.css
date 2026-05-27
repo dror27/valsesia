@@ -255,7 +255,7 @@ button:focus-visible {
   padding: 0;
 }
 
-.entry-list li + li {
+.entry-list > li + li {
   margin-top: 0.95rem;
   padding-top: 0.95rem;
   border-top: 1px dashed var(--border);
@@ -331,6 +331,49 @@ button:focus-visible {
   color: var(--muted);
   font-size: 0.95rem;
   font-family: "Assistant", sans-serif;
+}
+
+.translation-inline {
+  margin-top: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.translation-inline-label {
+  font-family: "Assistant", sans-serif;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.translation-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.translation-pill {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.translation-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.translation-pill.is-current {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .essay-card {

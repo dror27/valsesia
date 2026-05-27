@@ -2,7 +2,7 @@
 layout: default
 title: עברית
 lang: he
-dir: rtl
+text_dir: rtl
 permalink: /he/
 ---
 

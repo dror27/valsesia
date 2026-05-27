@@ -2,7 +2,7 @@
 layout: default
 title: Home
 lang: he
-dir: rtl
+text_dir: rtl
 ---
 
 {% assign all_items = site.essays_he | concat: site.essays_it | concat: site.essays_en | sort: 'date' | reverse %}
@@ -33,9 +33,14 @@ dir: rtl
   <article class="list-card">
     <h2>Recent Essays</h2>
 
-    <ul class="entry-list mode-abstracts">
+    <ul class="entry-list mode-abstracts" data-deduplicate-translations>
       {% for item in all_items limit: 8 %}
-        <li lang="{{ item.lang | default: 'he' }}" dir="{{ item.dir | default: 'ltr' }}">
+        <li
+          lang="{{ item.lang | default: 'he' }}"
+          dir="{{ item.text_dir | default: 'ltr' }}"
+          {% if item.translation_key %}data-translation-group="{{ item.translation_key }}"{% endif %}
+          data-entry-lang="{{ item.lang | default: 'he' }}"
+        >
           <div class="abstract-title">
             <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
             <span class="tag">{{ item.lang | upcase }}</span>
@@ -59,9 +64,14 @@ dir: rtl
       {% endfor %}
     </ul>
 
-    <ul class="entry-list mode-compact">
+    <ul class="entry-list mode-compact" data-deduplicate-translations>
       {% for item in all_items limit: 12 %}
-        <li lang="{{ item.lang | default: 'he' }}" dir="{{ item.dir | default: 'ltr' }}">
+        <li
+          lang="{{ item.lang | default: 'he' }}"
+          dir="{{ item.text_dir | default: 'ltr' }}"
+          {% if item.translation_key %}data-translation-group="{{ item.translation_key }}"{% endif %}
+          data-entry-lang="{{ item.lang | default: 'he' }}"
+        >
           <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
           <span class="tag">{{ item.lang | upcase }}</span>
           <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.author %} · {{ item.author }}{% endif %}{% if item.summary %} · {{ item.summary }}{% endif %}</div>

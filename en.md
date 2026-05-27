@@ -2,7 +2,7 @@
 layout: default
 title: English
 lang: en
-dir: ltr
+text_dir: ltr
 permalink: /en/
 ---
 
