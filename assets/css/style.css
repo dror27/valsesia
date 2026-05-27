@@ -22,11 +22,11 @@ body {
   background:
     linear-gradient(
       to bottom,
-      rgba(255, 253, 248, 0.38),
-      rgba(255, 253, 248, 0.54)
+      rgba(255, 253, 248, 0.20),
+      rgba(255, 253, 248, 0.34)
     ),
-    radial-gradient(circle at 8% 0%, rgba(239, 228, 212, 0.45) 0, transparent 30%),
-    radial-gradient(circle at 92% 8%, rgba(229, 239, 232, 0.45) 0, transparent 26%),
+    radial-gradient(circle at 8% 0%, rgba(239, 228, 212, 0.28) 0, transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(229, 239, 232, 0.28) 0, transparent 26%),
     url("../images/valsesia-background.jpg") center / cover fixed no-repeat,
     var(--bg);
   font-family: "Crimson Pro", Georgia, serif;
@@ -149,11 +149,12 @@ button:focus-visible {
 .hero,
 .list-card,
 .essay-card {
-  background: rgba(255, 253, 248, 0.84);
+  background: rgba(255, 253, 248, 0.70);
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: var(--shadow);
   transition: box-shadow 220ms ease, transform 220ms ease;
+  backdrop-filter: blur(2px);
 }
 
 .hero {
