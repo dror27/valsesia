@@ -34,7 +34,7 @@ dir: rtl
       {% for item in all_items limit: 8 %}
         <li lang="{{ item.lang | default: 'he' }}" dir="{{ item.dir | default: 'ltr' }}">
           <div class="abstract-title">
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
             <span class="tag">{{ item.lang | upcase }}</span>
           </div>
           <div class="meta">{{ item.date | date: "%Y-%m-%d" }}</div>
@@ -59,7 +59,7 @@ dir: rtl
     <ul class="entry-list mode-compact">
       {% for item in all_items limit: 12 %}
         <li lang="{{ item.lang | default: 'he' }}" dir="{{ item.dir | default: 'ltr' }}">
-          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
           <span class="tag">{{ item.lang | upcase }}</span>
           <div class="meta">{{ item.date | date: "%Y-%m-%d" }}{% if item.summary %} · {{ item.summary }}{% endif %}</div>
         </li>
