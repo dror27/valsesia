@@ -10,6 +10,8 @@ translation_key: pasolini_valsesia_remote_work
 related_reading:
   - title: "Pier Paolo Pasolini - Wikipedia"
     url: "https://en.wikipedia.org/wiki/Pier_Paolo_Pasolini"
+footer_image: "/assets/images/pasolini-modern-simplicity-footer.png"
+footer_image_alt: "The Paradox of Modern Simplicity"
 ---
 
 Pier Paolo Pasolini’s much-debated “glorification” of the poor and the underdeveloped has often been dismissed as romantic, reactionary, or ethically suspect. Yet read carefully, Pasolini was neither praising misery nor advocating stagnation. Rather, he was diagnosing a historical rupture: the destruction of forms of life that had not yet been colonized by consumer capitalism. His object was not poverty as deprivation, but underdevelopment as a condition of cultural and existential difference. Juxtaposing this framework with Valsesia (VC) reveals both the enduring relevance of Pasolini’s insights and the need to move beyond them.

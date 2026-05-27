@@ -427,6 +427,26 @@ button:focus-visible {
   margin-top: 1.05rem;
 }
 
+.essay-footer-image {
+  margin: 1.4rem 0 0;
+}
+
+.essay-footer-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.essay-footer-image figcaption {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-family: "Assistant", sans-serif;
+  font-size: 0.9rem;
+}
+
 .site-footer {
   max-width: 980px;
   margin: 0 auto 2rem;

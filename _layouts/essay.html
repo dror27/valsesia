@@ -82,4 +82,16 @@ layout: default
       </section>
     {% endif %}
   {% endif %}
+  {% if page.footer_image %}
+    <figure class="essay-footer-image">
+      <img
+        src="{{ page.footer_image | relative_url }}"
+        alt="{{ page.footer_image_alt | default: '' }}"
+        loading="lazy"
+      />
+      {% if page.footer_image_caption %}
+        <figcaption>{{ page.footer_image_caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
 </article>
