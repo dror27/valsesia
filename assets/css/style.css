@@ -22,11 +22,11 @@ body {
   background:
     linear-gradient(
       to bottom,
-      color-mix(in oklab, var(--paper) 74%, white),
-      color-mix(in oklab, var(--paper) 84%, white)
+      rgba(255, 253, 248, 0.50),
+      rgba(255, 253, 248, 0.64)
     ),
-    radial-gradient(circle at 10% 0%, #efe4d4 0, transparent 32%),
-    radial-gradient(circle at 90% 10%, #e5efe8 0, transparent 28%),
+    radial-gradient(circle at 8% 0%, rgba(239, 228, 212, 0.45) 0, transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(229, 239, 232, 0.45) 0, transparent 26%),
     url("../images/valsesia-background.jpg") center / cover fixed no-repeat,
     var(--bg);
   font-family: "Crimson Pro", Georgia, serif;
@@ -149,7 +149,7 @@ button:focus-visible {
 .hero,
 .list-card,
 .essay-card {
-  background: var(--paper);
+  background: rgba(255, 253, 248, 0.90);
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: var(--shadow);
@@ -434,6 +434,10 @@ html[lang="he"] .essay-content {
 }
 
 @media (max-width: 860px) {
+  body {
+    background-attachment: scroll, scroll, scroll, scroll, scroll;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
