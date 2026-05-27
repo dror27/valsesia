@@ -287,6 +287,10 @@ button:focus-visible {
   gap: 0.42rem;
 }
 
+.essay-head .topic-list {
+  margin-bottom: 0.75rem;
+}
+
 .topic-list a {
   display: inline-block;
   border: 1px solid var(--border);
