@@ -20,8 +20,14 @@ body {
   margin: 0;
   color: var(--ink);
   background:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--paper) 74%, white),
+      color-mix(in oklab, var(--paper) 84%, white)
+    ),
     radial-gradient(circle at 10% 0%, #efe4d4 0, transparent 32%),
     radial-gradient(circle at 90% 10%, #e5efe8 0, transparent 28%),
+    url("../images/valsesia-background.jpg") center / cover fixed no-repeat,
     var(--bg);
   font-family: "Crimson Pro", Georgia, serif;
   line-height: 1.75;
