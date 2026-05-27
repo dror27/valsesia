@@ -1,0 +1,37 @@
+---
+title: "Pasolini in Valsesia: Underdevelopment, Endurance, and the Ethics of Survival"
+date: 2026-05-27
+summary: "The essay explores how the search for a simpler life in Valsesia intersects with the tensions of modernity, remote work, and local culture."
+long_summary: "The essay examines Valsesia through Pasolini’s critique of modernity, exploring how remote workers and new settlers seeking quieter and simpler lives create a fragile tension between genuine attempts to live differently and the risk of transforming local culture, silence, and simplicity into aesthetic products of global consumer society."
+author: "Dror Kessler"
+tags:
+  - pasolini
+translation_key: pasolini_valsesia_remote_work
+related_reading:
+  - title: "Pier Paolo Pasolini - Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Pier_Paolo_Pasolini"
+---
+
+Pier Paolo Pasolini’s much-debated “glorification” of the poor and the underdeveloped has often been dismissed as romantic, reactionary, or ethically suspect. Yet read carefully, Pasolini was neither praising misery nor advocating stagnation. Rather, he was diagnosing a historical rupture: the destruction of forms of life that had not yet been colonized by consumer capitalism. His object was not poverty as deprivation, but underdevelopment as a condition of cultural and existential difference. Juxtaposing this framework with Valsesia (VC) reveals both the enduring relevance of Pasolini’s insights and the need to move beyond them.
+
+Valsesia is not poor in the sense Pasolini associated with the Roman borgate or the Southern Italian countryside of the postwar decades. There is no mass hunger, no shantytowns, no visible subproletariat. And yet, Valsesia occupies a liminal position that Pasolini would have immediately recognized: marginal without being destitute, traditional without being traditionalist, outside the main circuits of development without actively opposing them. It is precisely this in-between status that makes the comparison productive.
+
+Pasolini’s core claim, especially in Scritti corsari and Lettere luterane, was that modernization—understood as the spread of consumer culture, standardized language, and media saturation—constituted a form of anthropological violence. Fascism, he argued, disciplined behavior; consumer capitalism colonized desire itself. The poor and the underdeveloped mattered to Pasolini because they still lived, however precariously, within symbolic systems not entirely subordinated to consumption. Dialects survived. Bodies were not yet fully hygienized and optimized. Sexuality, work, and time retained non-instrumental qualities.
+
+Valsesia, in a quieter and later form, preserves traces of these same conditions. The valley’s marginality is not heroic; it is incidental. Its geography—steep slopes, fragmented frazioni, seasonal isolation—has simply slowed the total integration of life into the rhythms of growth and efficiency. Time in Valsesia is not organized around progress narratives but around maintenance: roofs, paths, woodpiles, snow, water. This is not nostalgia; it is repetition. Pasolini would likely have described this as a residual form of life—neither premodern nor fully modern, but enduring by inertia rather than resistance.
+
+Language offers a particularly sharp point of contact. Pasolini’s obsession with dialects was never merely linguistic. Dialect, for him, indexed an entire way of being in the world: embodied, local, opaque to power. In Valsesia, dialects—Walser or Piedmontese-inflected Italian—continue to function in this way. They are not heritage objects; they are practical tools, used unevenly and often silently. Silence itself is communicative. Meaning circulates without explanation, without the compulsion to narrate oneself. For outsiders, this is often misread as closure or backwardness. Pasolini would have understood it instead as non-bourgeois reserve: a refusal, not ideological but existential, to turn life into discourse.
+
+The body, too, tells a related story. Pasolini’s films linger on bodies marked by labor, exposure, and fatigue. In Valsesia, bodies are aging rather than exploited, but they are similarly shaped by decades of manual upkeep. Knowledge resides in hands, posture, and habit rather than in abstract expertise. The dominant ethic is not productivity but care: the continuous, uncelebrated work of keeping things standing. This is not the romanticized poverty of Pasolini’s early cinema, but it shares with it a distance from the logic of optimization that defines contemporary life.
+
+Crucially, this way of life is not sustained by ideology. Pasolini emphasized that the subproletariat did not resist capitalism politically; their resistance was unconscious, embedded in daily practice. Valsesia mirrors this unsettlingly well. There is little explicit discourse of tradition, identity, or resistance among locals. The danger begins precisely when these are named—when traditions are restored, curated, and explained. At that point, Pasolini would argue, they have already been neutralized. What survives survives because it is untheorized.
+
+This brings us to the ethical tension at the heart of both Pasolini’s project and the contemporary situation in Valsesia. Pasolini was painfully aware that he was aestheticizing lives he did not live, speaking for those who rarely spoke for themselves. He never resolved this contradiction; instead, he allowed it to fracture his work, culminating in the bleak vision of Salò, where all bodies are fully colonized and innocence has vanished.
+
+In Valsesia today, a similar tension arises with the arrival of outsiders—new residents, second-home owners, remote workers—who are drawn precisely to what has endured. The impulse to protect, preserve, or “revitalize” risks repeating Pasolini’s error in a new form. Tourism, even when branded as slow or ecological, turns everyday life into performance. Restoration cleans away the traces of use that gave buildings their meaning. Remote work introduces capital without bodies, reshaping time and desire invisibly.
+
+Seen through Pasolini’s lens, these processes represent not development but a delayed form of colonization. Yet a simple refusal of change is neither possible nor desirable. Unlike Pasolini’s poor, Valsesia is not excluded from modernity; it is partially integrated, selectively connected. The challenge, then, is post-Pasolinian: how to enable continuity without spectacle, transformation without annihilation.
+
+One way forward is to shift the frame from underdevelopment to endurance. Valsesia is not a space of lack waiting to be filled, nor a relic to be preserved. It is a place where certain forms of life have persisted not because they opposed modernity, but because modernity did not fully notice them. This distinction matters. It avoids moral hierarchies between “advanced” and “backward” and resists the temptation to aestheticize marginality.
+
+Pasolini helps us see what is at stake: the loss of non-instrumental life, of languages and bodies not fully captured by consumption. But Valsesia forces us to confront the limits of his vision. The task today is not to glorify the poor or the undeveloped, but to ask how forms of life can remain livable without being turned into images of themselves. If Pasolini taught us to mourn what development destroys, Valsesia challenges us to think about how survival might continue—quietly, imperfectly, and without applause.
