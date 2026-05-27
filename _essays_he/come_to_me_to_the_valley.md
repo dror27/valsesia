@@ -6,6 +6,7 @@ long_summary: "השיר מתאר קריאה לעזוב את הרעש, העומס
 author: "Dror Kessler"
 tags:
   - song
+  - simple-living
 translation_key: come_to_me_to_the_valley
 related_reading:
   - title: "בוא אלי אל העמק - הקלטת דמו"
