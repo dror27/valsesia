@@ -1,6 +1,6 @@
 ---
 title: "Pasolini in Valsesia: Underdevelopment, Endurance, and the Ethics of Survival"
-date: 2026-05-27
+date: 2025-12-27
 summary: "The essay explores how the search for a simpler life in Valsesia intersects with the tensions of modernity, remote work, and local culture."
 long_summary: "The essay examines Valsesia through Pasolini’s critique of modernity, exploring how remote workers and new settlers seeking quieter and simpler lives create a fragile tension between genuine attempts to live differently and the risk of transforming local culture, silence, and simplicity into aesthetic products of global consumer society."
 author: "Dror Kessler"

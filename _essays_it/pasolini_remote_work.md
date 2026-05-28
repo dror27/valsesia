@@ -1,6 +1,6 @@
 ---
 title: "Pasolini in Valsesia: sottosviluppo, persistenza e il paradosso contemporaneo della vita semplice"
-date: 2026-05-27
+date: 2025-12-27
 summary: "L’articolo riflette sulla Valsesia come luogo in cui il desiderio di una vita semplice incontra le tensioni della modernità contemporanea."
 long_summary: "L’articolo esplora la Valsesia attraverso le idee di Pasolini sul sottosviluppo, non inteso come povertà ma come forma di vita non ancora completamente assorbita dalla cultura dei consumi, e analizza come nuovi abitanti, lavoro da remoto e desiderio di una vita più semplice e silenziosa creino oggi una tensione complessa tra ricerca autentica di un altro ritmo di vita e rischio di trasformare il luogo, il silenzio e la semplicità in un nuovo prodotto estetico della modernità globale."
 author: "Dror Kessler"
