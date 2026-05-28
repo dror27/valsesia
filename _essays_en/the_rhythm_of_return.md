@@ -13,6 +13,8 @@ related_reading:
     url: "https://italien.news/en/travel/south-tyrol/transhumance-schnalstal/"
   - title: "Be Here To Love Me (video)"
     url: "https://www.youtube.com/watch?v=BADaK_1VfnI"
+  - title: "Home is a Pattern of Return - Deep Dive (audio)"
+    url: "https://soundcloud.com/drorkessler/home_is_a_pattern_of_return"
 footer_image: "/assets/images/the_rhythm_of_return.png"
 footer_image_alt: "The Rhythm of Return"
 ---
