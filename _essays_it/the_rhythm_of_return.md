@@ -1,5 +1,5 @@
 ---
-title: "ra Permanenza e Movimento: Vite modellate dal ritorno"
+title: "Tra Permanenza e Movimento: Vite modellate dal ritorno"
 date: 2026-05-28
 summary: "Dalle montagne alpine ai migranti contemporanei, un’esplorazione del ritorno stagionale e dei modi in cui gli esseri umani imparano a vivere tra più luoghi."
 long_summary: "Un saggio che esplora la migrazione come ritmo ricorrente della vita umana piuttosto che come rottura. Dalla transumanza alpina e le mandrie stagionali, fino alla vita errante di Townes Van Zandt, alle seconde case in Valsesia e all’immigrazione permanente, il testo mostra come gli esseri umani abitino non solo luoghi, ma anche percorsi di ritorno, stagioni e appartenenze distribuite."
