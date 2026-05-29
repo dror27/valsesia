@@ -28,6 +28,17 @@ layout: default
     {% endif %}
   </header>
   <section class="essay-content">
+    {% if page.unaudited_translation %}
+      <p class="translation-warning">
+        {% if page.lang == 'he' %}
+          [תרגום לא מבוקר]
+        {% elsif page.lang == 'it' %}
+          [traduzione non revisionata]
+        {% else %}
+          [unaudited translation]
+        {% endif %}
+      </p>
+    {% endif %}
     {{ content }}
   </section>
   {% if page.related_reading %}

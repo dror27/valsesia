@@ -26,6 +26,7 @@ defaults:
       layout: essay
       lang: he
       text_dir: rtl
+      unaudited_translation: false
   - scope:
       path: ""
       type: essays_it
@@ -33,6 +34,7 @@ defaults:
       layout: essay
       lang: it
       text_dir: ltr
+      unaudited_translation: false
   - scope:
       path: ""
       type: essays_en
@@ -40,6 +42,7 @@ defaults:
       layout: essay
       lang: en
       text_dir: ltr
+      unaudited_translation: false
 
 exclude:
   - README.md

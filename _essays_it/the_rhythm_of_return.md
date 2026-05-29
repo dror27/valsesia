@@ -8,6 +8,7 @@ tags:
   - migration
   - second-home
 translation_key: the_rhythm_of_return
+unaudited_translation: true
 related_reading:
   - title: "Transhumance in the Schnekstal Valley (english)"
     url: "https://italien.news/en/travel/south-tyrol/transhumance-schnalstal/"
@@ -62,5 +63,3 @@ I vecchi sentieri dei pastori restano visibili sotto la vita contemporanea.
 Ogni estate, le luci ritornano nei villaggi di montagna rimasti bui durante l’inverno. I kayak riappaiono lungo i fiumi alpini. I sentieri si riempiono di volti stagionali familiari. Il movimento può avvenire oggi attraverso proprietà, lavoro flessibile o cultura del tempo libero invece che attraverso il bestiame, ma il modello sottostante resta riconoscibile.
 
 Gli esseri umani continuano ancora a salire verso aria più fresca quando la valle diventa troppo pesante.
-
-[unaudited automatic translation]

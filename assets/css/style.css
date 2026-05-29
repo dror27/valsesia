@@ -462,6 +462,18 @@ button:focus-visible {
   font-size: 1.08rem;
 }
 
+.translation-warning {
+  margin: 0 0 0.9rem;
+  padding: 0.42rem 0.62rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--border));
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--accent-soft) 62%, white);
+  color: color-mix(in oklab, var(--ink) 78%, var(--accent));
+  font-family: "Assistant", sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+
 .essay-content p {
   margin: 0;
 }
