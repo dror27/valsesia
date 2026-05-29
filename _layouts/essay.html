@@ -19,6 +19,40 @@ layout: default
         · {{ page.summary }}
       {% endif %}
     </p>
+    {% if page.audio_file %}
+      <section class="essay-audio" aria-label="Essay audio">
+        <p class="essay-audio-label">
+          {% if page.lang == 'he' %}
+            האזנה למאמר:
+          {% elsif page.lang == 'it' %}
+            Ascolta il saggio:
+          {% else %}
+            Listen to this essay:
+          {% endif %}
+        </p>
+        <div class="essay-audio-controls" data-audio-player>
+          <button
+            type="button"
+            class="audio-btn"
+            data-audio-toggle
+            data-audio-play-text="{% if page.lang == 'he' %}נגן{% elsif page.lang == 'it' %}Riproduci{% else %}Play{% endif %}"
+            data-audio-stop-text="{% if page.lang == 'he' %}עצור{% elsif page.lang == 'it' %}Ferma{% else %}Stop{% endif %}"
+          >
+            {% if page.lang == 'he' %}
+              נגן
+            {% elsif page.lang == 'it' %}
+              Riproduci
+            {% else %}
+              Play
+            {% endif %}
+          </button>
+          <span class="audio-time" data-audio-time>Listen · 00:00 min</span>
+          <audio preload="metadata" data-audio-element>
+            <source src="{{ '/assets/readings/' | append: page.audio_file | relative_url }}" type="audio/mpeg" />
+          </audio>
+        </div>
+      </section>
+    {% endif %}
     {% if page.tags %}
       <ul class="topic-list">
         {% for topic in page.tags %}

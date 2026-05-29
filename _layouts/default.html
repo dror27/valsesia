@@ -256,6 +256,88 @@
             });
           });
         }
+
+        var audioPlayers = document.querySelectorAll("[data-audio-player]");
+        audioPlayers.forEach(function (player) {
+          var audioElement = player.querySelector("[data-audio-element]");
+          var toggleButton = player.querySelector("[data-audio-toggle]");
+          var timeLabel = player.querySelector("[data-audio-time]");
+
+          if (!audioElement || !toggleButton || !timeLabel) {
+            return;
+          }
+
+          var formatTime = function (valueInSeconds) {
+            if (!Number.isFinite(valueInSeconds) || valueInSeconds < 0) {
+              return "00:00";
+            }
+
+            var totalSeconds = Math.floor(valueInSeconds);
+            var minutes = Math.floor(totalSeconds / 60);
+            var seconds = totalSeconds % 60;
+            var paddedSeconds = String(seconds).padStart(2, "0");
+            return String(minutes) + ":" + paddedSeconds;
+          };
+
+          var renderTimeLabel = function (valueInSeconds) {
+            return "Listen · " + formatTime(valueInSeconds) + " min";
+          };
+
+          var playText = toggleButton.getAttribute("data-audio-play-text") || "Play";
+          var stopText = toggleButton.getAttribute("data-audio-stop-text") || "Stop";
+
+          var setToggleLabel = function (isPlaying) {
+            toggleButton.textContent = isPlaying ? stopText : playText;
+          };
+
+          var updateIdleTime = function () {
+            timeLabel.textContent = renderTimeLabel(audioElement.duration);
+          };
+
+          var updatePlayheadTime = function () {
+            timeLabel.textContent = renderTimeLabel(audioElement.currentTime);
+          };
+
+          setToggleLabel(false);
+          updateIdleTime();
+
+          toggleButton.addEventListener("click", function () {
+            if (audioElement.paused) {
+              audioElement.play();
+            } else {
+              audioElement.pause();
+              setToggleLabel(false);
+            }
+          });
+
+          audioElement.addEventListener("loadedmetadata", function () {
+            if (audioElement.paused) {
+              updateIdleTime();
+            }
+          });
+
+          audioElement.addEventListener("play", function () {
+            setToggleLabel(true);
+            updatePlayheadTime();
+          });
+
+          audioElement.addEventListener("timeupdate", function () {
+            if (!audioElement.paused) {
+              updatePlayheadTime();
+            }
+          });
+
+          audioElement.addEventListener("pause", function () {
+            if (audioElement.currentTime === 0 || audioElement.ended) {
+              updateIdleTime();
+            }
+          });
+
+          audioElement.addEventListener("ended", function () {
+            setToggleLabel(false);
+            updateIdleTime();
+          });
+        });
       })();
     </script>
   </body>

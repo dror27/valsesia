@@ -387,6 +387,52 @@ button:focus-visible {
   font-family: "Alef", sans-serif;
 }
 
+.essay-audio {
+  margin: 0.8rem 0 0.95rem;
+  padding: 0.6rem 0.72rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--paper) 88%, white);
+}
+
+.essay-audio-label {
+  margin: 0;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.essay-audio-controls {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.audio-btn {
+  border: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.22rem 0.78rem;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.audio-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.audio-time {
+  font-family: "Assistant", sans-serif;
+  font-size: 0.86rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .translation-box {
   margin-top: 0.85rem;
   padding: 0.65rem 0.8rem;
@@ -573,5 +619,9 @@ html[lang="he"] .essay-content {
 
   .nav-stack {
     align-items: flex-start;
+  }
+
+  .essay-audio-controls {
+    flex-wrap: wrap;
   }
 }

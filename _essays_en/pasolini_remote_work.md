@@ -7,6 +7,7 @@ author: "Dror Kessler"
 tags:
   - pasolini
 translation_key: pasolini_valsesia_remote_work
+audio_file: sample_audio.mp3
 related_reading:
   - title: "Pier Paolo Pasolini - Wikipedia"
     url: "https://en.wikipedia.org/wiki/Pier_Paolo_Pasolini"
