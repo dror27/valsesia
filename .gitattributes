@@ -1,1 +1,1 @@
-*.mp3 filter=lfs diff=lfs merge=lfs -text
+assets/readings/*.mp3 -filter -diff -merge binary

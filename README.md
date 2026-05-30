@@ -65,3 +65,13 @@ tags:
 ---
 
 Then write your text in Markdown below.
+
+## Audio On GitHub Pages
+
+GitHub Pages serves files from the repository contents in the branch. It does not publish Git LFS media payloads for this site, so audio files under `assets/readings/` must be committed as normal Git binaries, not as LFS pointers.
+
+If an MP3 was previously tracked by LFS, re-stage it after updating `.gitattributes`:
+
+   git add --renormalize assets/readings/*.mp3
+
+Then commit and push so GitHub Pages publishes the real file instead of the small LFS pointer.
