@@ -46,21 +46,7 @@ layout: default
               Play
             {% endif %}
           </button>
-          <span class="audio-time audio-time-initial" data-audio-initial>Listen · 00:00 min</span>
-          <div class="audio-advanced" data-audio-advanced>
-            <span class="audio-time audio-time-current" data-audio-current>00:00</span>
-            <input
-              class="audio-seek"
-              type="range"
-              min="0"
-              max="100"
-              value="0"
-              step="0.1"
-              data-audio-seek
-              aria-label="Audio position"
-            />
-            <span class="audio-time audio-time-total" data-audio-total>00:00</span>
-          </div>
+          <span class="audio-time" data-audio-time>Listen · 00:00 min</span>
           <audio preload="metadata" data-audio-element>
             <source src="{{ '/assets/readings/' | append: page.audio_file | relative_url }}" type="audio/mpeg" />
           </audio>
