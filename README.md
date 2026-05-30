@@ -34,6 +34,17 @@ A small multilingual essays site, designed for GitHub Pages.
 
 3. Open http://127.0.0.1:4000
 
+## GitHub Pages Build Status
+
+To check the latest GitHub Pages deployment status for this repository:
+
+   ruby _scripts/pages_build_status.rb
+
+Optional flags:
+
+   ruby _scripts/pages_build_status.rb --json
+   ruby _scripts/pages_build_status.rb --repo dror27/valsesia
+
 ## Export Essays For Editing
 
 Run:
