@@ -34,6 +34,14 @@ A small multilingual essays site, designed for GitHub Pages.
 
 3. Open http://127.0.0.1:4000
 
+## Export Essays For Editing
+
+Run:
+
+   ruby _scripts/export_essays.rb
+
+This exports one Word-openable `.doc` file per essay into `_exports/`.
+
 ## Add New Essays
 
 Add a new Markdown file in the relevant collection folder, for example:
