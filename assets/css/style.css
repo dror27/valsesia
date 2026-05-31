@@ -3,9 +3,9 @@
 :root {
   --bg: #f2eee8;
   --paper: #fffdf8;
-  --ink: #23201d;
-  --muted: #6a6057;
-  --accent: #2f6b5f;
+  --ink: #000000;
+  --muted: #000000;
+  --accent: #000000;
   --accent-soft: #e3efe9;
   --border: #d9d1c8;
   --shadow: 0 10px 28px rgba(35, 32, 29, 0.08);
@@ -280,7 +280,7 @@ button:focus-visible {
 }
 
 .abstract-summary {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.65;
 }
 
@@ -505,7 +505,7 @@ button:focus-visible {
 }
 
 .essay-content {
-  font-size: 1.08rem;
+  font-size: 1.16rem;
 }
 
 .translation-warning {
@@ -572,7 +572,7 @@ html[lang="he"] .essay-head h1 {
 }
 
 html[lang="he"] .essay-content {
-  font-size: 1.14rem;
+  font-size: 1.2rem;
   line-height: 1.82;
 }
 

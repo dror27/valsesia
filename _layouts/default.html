@@ -106,7 +106,47 @@
           }
         };
 
-        var buildTranslationLinks = function (bestItem, groupItems) {
+        var fullCorpusTranslationScanLimit = 20;
+
+        var collectGlobalTranslationGroups = function () {
+          var sourceList = document.querySelector("[data-all-translation-source]");
+          var groups = new Map();
+
+          if (!sourceList) {
+            return groups;
+          }
+
+          var sourceItems = sourceList.querySelectorAll("li[data-translation-group]");
+          Array.prototype.slice.call(sourceItems, 0, fullCorpusTranslationScanLimit).forEach(function (item) {
+            var groupKey = item.getAttribute("data-translation-group");
+            var entryLang = item.getAttribute("data-entry-lang") || "";
+            var titleLink = item.querySelector("a");
+            if (!groupKey || !titleLink) {
+              return;
+            }
+
+            if (!groups.has(groupKey)) {
+              groups.set(groupKey, []);
+            }
+
+            var groupEntries = groups.get(groupKey);
+            var href = titleLink.getAttribute("href") || "";
+            var alreadyAdded = groupEntries.some(function (entry) {
+              return entry.lang === entryLang && entry.href === href;
+            });
+
+            if (!alreadyAdded) {
+              groupEntries.push({
+                lang: entryLang,
+                href: href,
+              });
+            }
+          });
+
+          return groups;
+        };
+
+        var buildTranslationLinks = function (bestItem, linkEntries) {
           var existing = bestItem.querySelector("[data-generated-translation-links]");
           if (existing) {
             existing.remove();
@@ -132,23 +172,25 @@
           var links = document.createElement("div");
           links.className = "translation-link-row";
 
-          groupItems.forEach(function (item) {
-            var entryLang = item.getAttribute("data-entry-lang") || "";
-            var titleLink = item.querySelector("a");
-            if (!titleLink) {
+          var bestLink = bestItem.querySelector("a");
+          var bestHref = bestLink ? bestLink.getAttribute("href") || "" : "";
+          var bestLang = bestItem.getAttribute("data-entry-lang") || "";
+
+          linkEntries.forEach(function (entry) {
+            if (!entry.href) {
               return;
             }
 
-            if (item === bestItem) {
+            if (entry.href === bestHref && entry.lang === bestLang) {
               return;
             }
 
             var otherLink = document.createElement("a");
             otherLink.className = "translation-pill";
-            otherLink.href = titleLink.getAttribute("href");
-            otherLink.textContent = getLanguageLabel(entryLang);
+            otherLink.href = entry.href;
+            otherLink.textContent = getLanguageLabel(entry.lang);
             otherLink.addEventListener("click", function () {
-              storePreferredLanguage(entryLang);
+              storePreferredLanguage(entry.lang);
             });
             links.appendChild(otherLink);
           });
@@ -165,6 +207,7 @@
 
         var deduplicateTranslationLists = function () {
           var preferredEntryLanguage = resolvePreferredLanguage();
+          var globalGroups = collectGlobalTranslationGroups();
           var lists = document.querySelectorAll("[data-deduplicate-translations]");
 
           lists.forEach(function (list) {
@@ -184,11 +227,7 @@
               groups.get(groupKey).push(item);
             });
 
-            groups.forEach(function (groupItems) {
-              if (groupItems.length < 2) {
-                return;
-              }
-
+              groups.forEach(function (groupItems, groupKey) {
               var bestItem = null;
 
               groupItems.forEach(function (item) {
@@ -209,11 +248,17 @@
                 bestItem = groupItems[0];
               }
 
-              groupItems.forEach(function (item) {
-                item.hidden = item !== bestItem;
-              });
+              var linkEntries = globalGroups.get(groupKey) || [];
 
-              buildTranslationLinks(bestItem, groupItems);
+              if (groupItems.length > 1) {
+                groupItems.forEach(function (item) {
+                  item.hidden = item !== bestItem;
+                });
+              }
+
+              if (linkEntries.length > 1) {
+                buildTranslationLinks(bestItem, linkEntries);
+              }
             });
           });
         };

@@ -78,6 +78,16 @@ text_dir: rtl
         </li>
       {% endfor %}
     </ul>
+
+    <ul class="entry-list" hidden data-all-translation-source>
+      {% for item in all_items limit: 20 %}
+        {% if item.translation_key %}
+          <li data-translation-group="{{ item.translation_key }}" data-entry-lang="{{ item.lang | default: 'he' }}">
+            <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name | replace: '.md', '' }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </article>
 
   <aside class="list-card">
