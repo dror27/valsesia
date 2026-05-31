@@ -306,9 +306,13 @@
         audioPlayers.forEach(function (player) {
           var audioElement = player.querySelector("[data-audio-element]");
           var toggleButton = player.querySelector("[data-audio-toggle]");
-          var timeLabel = player.querySelector("[data-audio-time]");
+          var initialTimeLabel = player.querySelector("[data-audio-initial]");
+          var advancedControls = player.querySelector("[data-audio-advanced]");
+          var seekSlider = player.querySelector("[data-audio-seek]");
+          var currentTimeLabel = player.querySelector("[data-audio-current]");
+          var totalTimeLabel = player.querySelector("[data-audio-total]");
 
-          if (!audioElement || !toggleButton || !timeLabel) {
+          if (!audioElement || !toggleButton || !initialTimeLabel || !advancedControls || !seekSlider || !currentTimeLabel || !totalTimeLabel) {
             return;
           }
 
@@ -324,10 +328,6 @@
             return String(minutes) + ":" + paddedSeconds;
           };
 
-          var renderTimeLabel = function (valueInSeconds) {
-            return "Listen · " + formatTime(valueInSeconds) + " min";
-          };
-
           var playText = toggleButton.getAttribute("data-audio-play-text") || "Play";
           var stopText = toggleButton.getAttribute("data-audio-stop-text") || "Stop";
 
@@ -335,52 +335,159 @@
             toggleButton.textContent = isPlaying ? stopText : playText;
           };
 
-          var updateIdleTime = function () {
-            timeLabel.textContent = renderTimeLabel(audioElement.duration);
+          var renderInitialTimeLabel = function (valueInSeconds) {
+            initialTimeLabel.textContent = "Listen · " + formatTime(valueInSeconds) + " min";
           };
 
-          var updatePlayheadTime = function () {
-            timeLabel.textContent = renderTimeLabel(audioElement.currentTime);
+          var hasStarted = false;
+          var isSyncingSlider = false;
+          var suppressPauseUntil = 0;
+          var activateAdvancedControls = function () {
+            if (hasStarted) {
+              return;
+            }
+
+            hasStarted = true;
+            player.classList.add("is-started");
+          };
+
+          var setSliderProgress = function () {
+            var maxValue = Number(seekSlider.max) || 0;
+            var currentValue = Number(seekSlider.value) || 0;
+            var progress = maxValue > 0 ? (currentValue / maxValue) * 100 : 0;
+            seekSlider.style.setProperty("--seek-progress", String(progress) + "%");
+          };
+
+          var setBufferedProgress = function () {
+            var duration = audioElement.duration;
+            var bufferedPercent = 0;
+
+            if (Number.isFinite(duration) && duration > 0 && audioElement.buffered.length > 0) {
+              var lastRangeIndex = audioElement.buffered.length - 1;
+              var bufferedEnd = audioElement.buffered.end(lastRangeIndex);
+              bufferedPercent = Math.min((bufferedEnd / duration) * 100, 100);
+            }
+
+            var playedPercent = Number(seekSlider.style.getPropertyValue("--seek-progress").replace("%", "")) || 0;
+            var clampedBuffered = Math.max(bufferedPercent, playedPercent);
+            seekSlider.style.setProperty("--buffered-progress", String(clampedBuffered) + "%");
+          };
+
+          var setLoadingState = function (isLoading) {
+            player.classList.toggle("is-loading", isLoading);
+          };
+
+          var syncSeekUI = function (timeInSeconds) {
+            isSyncingSlider = true;
+            if (Number.isFinite(timeInSeconds) && timeInSeconds >= 0) {
+              seekSlider.value = String(timeInSeconds);
+              currentTimeLabel.textContent = formatTime(timeInSeconds);
+            } else {
+              seekSlider.value = "0";
+              currentTimeLabel.textContent = "00:00";
+            }
+            isSyncingSlider = false;
+            setSliderProgress();
+            setBufferedProgress();
+          };
+
+          var syncDurationUI = function () {
+            if (Number.isFinite(audioElement.duration) && audioElement.duration > 0) {
+              seekSlider.max = String(audioElement.duration);
+              totalTimeLabel.textContent = formatTime(audioElement.duration);
+              renderInitialTimeLabel(audioElement.duration);
+            } else {
+              seekSlider.max = "100";
+              totalTimeLabel.textContent = "00:00";
+              renderInitialTimeLabel(0);
+            }
+            setSliderProgress();
+            setBufferedProgress();
           };
 
           setToggleLabel(false);
-          updateIdleTime();
+          setLoadingState(false);
+          syncSeekUI(0);
+          syncDurationUI();
 
           toggleButton.addEventListener("click", function () {
+            var now = Date.now();
             if (audioElement.paused) {
-              audioElement.play();
+              activateAdvancedControls();
+              suppressPauseUntil = now + 400;
+              var playPromise = audioElement.play();
+              if (playPromise && typeof playPromise.catch === "function") {
+                playPromise.catch(function () {
+                  suppressPauseUntil = 0;
+                  setToggleLabel(false);
+                });
+              }
             } else {
+              if (now < suppressPauseUntil) {
+                return;
+              }
               audioElement.pause();
               setToggleLabel(false);
             }
           });
 
-          audioElement.addEventListener("loadedmetadata", function () {
-            if (audioElement.paused) {
-              updateIdleTime();
+          seekSlider.addEventListener("input", function () {
+            if (isSyncingSlider) {
+              return;
             }
+
+            var nextTime = Number(seekSlider.value);
+            if (Number.isFinite(nextTime)) {
+              audioElement.currentTime = nextTime;
+              syncSeekUI(nextTime);
+            }
+          });
+
+          audioElement.addEventListener("loadedmetadata", function () {
+            syncDurationUI();
+            syncSeekUI(audioElement.currentTime);
+          });
+
+          audioElement.addEventListener("progress", function () {
+            setBufferedProgress();
+          });
+
+          audioElement.addEventListener("waiting", function () {
+            setLoadingState(true);
+          });
+
+          audioElement.addEventListener("stalled", function () {
+            setLoadingState(true);
+          });
+
+          audioElement.addEventListener("canplay", function () {
+            setLoadingState(false);
+          });
+
+          audioElement.addEventListener("playing", function () {
+            setLoadingState(false);
           });
 
           audioElement.addEventListener("play", function () {
             setToggleLabel(true);
-            updatePlayheadTime();
+            syncSeekUI(audioElement.currentTime);
           });
 
           audioElement.addEventListener("timeupdate", function () {
-            if (!audioElement.paused) {
-              updatePlayheadTime();
-            }
+            syncSeekUI(audioElement.currentTime);
           });
 
           audioElement.addEventListener("pause", function () {
-            if (audioElement.currentTime === 0 || audioElement.ended) {
-              updateIdleTime();
+            if (!audioElement.ended) {
+              setToggleLabel(false);
             }
+            syncSeekUI(audioElement.currentTime);
           });
 
           audioElement.addEventListener("ended", function () {
             setToggleLabel(false);
-            updateIdleTime();
+            setLoadingState(false);
+            syncSeekUI(audioElement.currentTime);
           });
         });
       })();
