@@ -2,7 +2,7 @@
 
 :root {
   --bg: #f2eee8;
-  --paper: #fffdf8;
+  --paper: #ffffff;
   --ink: #000000;
   --muted: #000000;
   --accent: #000000;
@@ -142,7 +142,7 @@ button:focus-visible {
 .hero,
 .list-card,
 .essay-card {
-  background: rgba(255, 253, 248, 0.84);
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: var(--shadow);
@@ -385,7 +385,7 @@ button:focus-visible {
   padding: 0.6rem 0.72rem;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: color-mix(in oklab, var(--paper) 88%, white);
+  background: #ffffff;
 }
 
 .essay-audio-label {
@@ -527,7 +527,7 @@ button:focus-visible {
   padding: 0.65rem 0.8rem;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: color-mix(in oklab, var(--accent-soft) 50%, white);
+  background: #ffffff;
 }
 
 .translation-title {
@@ -568,7 +568,7 @@ button:focus-visible {
   padding: 0.65rem 0.8rem;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: color-mix(in oklab, var(--paper) 84%, white);
+  background: #ffffff;
 }
 
 .related-title {
@@ -602,7 +602,7 @@ button:focus-visible {
   padding: 0.42rem 0.62rem;
   border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--border));
   border-radius: 8px;
-  background: color-mix(in oklab, var(--accent-soft) 62%, white);
+  background: #ffffff;
   color: color-mix(in oklab, var(--ink) 78%, var(--accent));
   font-family: "Assistant", sans-serif;
   font-size: 0.92rem;
@@ -679,7 +679,7 @@ html[lang="he"] .essay-content {
   line-height: 1.8;
   margin: 2em 0;
   padding: 1em;
-  background: var(--accent-soft);
+  background: #ffffff;
   border-left: 3px solid var(--accent);
   border-radius: 4px;
 }
