@@ -34,6 +34,13 @@ def language_from_path(file_path)
   File.basename(File.dirname(file_path)).sub("_essays_", "")
 end
 
+def text_direction(language_code, metadata)
+  configured = metadata["text_dir"].to_s.strip.downcase
+  return configured if %w[ltr rtl].include?(configured)
+
+  language_code == "he" ? "rtl" : "ltr"
+end
+
 def word_html_body(markdown)
   if KRAMDOWN_AVAILABLE
     Kramdown::Document.new(markdown, input: "GFM").to_html
@@ -46,6 +53,8 @@ end
 def html_document(file_path, metadata, markdown)
   language_code = language_from_path(file_path)
   language_name = LANGUAGE_NAMES.fetch(language_code, language_code)
+  direction = text_direction(language_code, metadata)
+  rtl = direction == "rtl"
   escaped_language = CGI.escapeHTML(language_name)
   escaped_title = CGI.escapeHTML(metadata.fetch("title", ""))
   escaped_summary = CGI.escapeHTML(metadata.fetch("summary", ""))
@@ -54,7 +63,7 @@ def html_document(file_path, metadata, markdown)
 
   <<~HTML
     <!DOCTYPE html>
-    <html lang="#{CGI.escapeHTML(language_code)}">
+    <html lang="#{CGI.escapeHTML(language_code)}" dir="#{direction}">
       <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -67,6 +76,8 @@ def html_document(file_path, metadata, markdown)
             font-size: 12pt;
             line-height: 1.6;
             margin: 2rem;
+            direction: #{direction};
+            text-align: #{rtl ? "right" : "left"};
           }
 
           h1 {
@@ -89,15 +100,30 @@ def html_document(file_path, metadata, markdown)
 
           .label {
             font-weight: bold;
+            display: block;
+            margin-bottom: 0.25rem;
+          }
+
+          .value {
+            display: block;
+          }
+
+          pre.song-lyrics {
+            direction: inherit;
+            text-align: start;
+            white-space: pre-wrap;
           }
         </style>
       </head>
       <body>
         <h1>#{escaped_title}</h1>
 
-        <div class="field"><span class="label">Language:</span> #{escaped_language}</div>
-        <div class="field"><span class="label">Summary:</span> #{escaped_summary}</div>
-        <div class="field"><span class="label">Long summary:</span> #{escaped_long_summary}</div>
+        <h2>Language</h2>
+        <div class="field"><span class="value">#{escaped_language}</span></div>
+        <h2>Summary</h2>
+        <div class="field"><span class="value">#{escaped_summary}</span></div>
+        <h2>Long summary</h2>
+        <div class="field"><span class="value">#{escaped_long_summary}</span></div>
 
         <h2>Text</h2>
         #{body_html}
