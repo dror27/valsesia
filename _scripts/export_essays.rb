@@ -134,7 +134,7 @@ end
 
 def export_basename(file_path)
   language_code = language_from_path(file_path)
-  "#{File.basename(file_path, ".md")}.#{language_code}.doc"
+  "#{File.basename(file_path, ".md")}_#{language_code}.doc"
 end
 
 FileUtils.mkdir_p(EXPORT_DIR)
