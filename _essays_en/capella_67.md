@@ -9,6 +9,8 @@ tags:
   - community
 translation_key: capella_67
 related_reading:
+  - title: "The Eviction Puppet Show of Silver Lake, Los Angeles - The Wind (podcast)
+    url: https://thewind.org/episodes/the-eviction-puppet-show-of-silver-lake-los-angeles
   - title: "Third place - Wikipedia"
     url: "https://en.wikipedia.org/wiki/Third_place"
   - title: "Capella 67 - Deep Dive (audio)"
