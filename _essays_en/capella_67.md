@@ -9,7 +9,7 @@ tags:
   - community
 translation_key: capella_67
 related_reading:
-  - title: "The Eviction Puppet Show of Silver Lake, Los Angeles - The Wind (podcast)
+  - title: "The Eviction Puppet Show of Silver Lake, Los Angeles - The Wind (podcast)"
     url: https://thewind.org/episodes/the-eviction-puppet-show-of-silver-lake-los-angeles
   - title: "Third place - Wikipedia"
     url: "https://en.wikipedia.org/wiki/Third_place"
@@ -36,6 +36,8 @@ The podcast told the story of a house that had accumulated people, projects, mem
 A much older house. A much quieter house.
 
 And somehow, kin.
+
+{% include mental_pause.html prompt="Pause for a moment. What kind of place do you wish existed near your home?" %}
 
 The house in Ramello is probably a few hundred years old. Nobody seems to know exactly. Long enough that certainty has given way to stories.
 
