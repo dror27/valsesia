@@ -37,7 +37,7 @@ A much older house. A much quieter house.
 
 And somehow, kin.
 
-{% include mental_pause.html prompt="Pause for a moment. What kind of place do you wish existed near your home?" %}
+{% include mental_pause.html %}
 
 The house in Ramello is probably a few hundred years old. Nobody seems to know exactly. Long enough that certainty has given way to stories.
 
@@ -75,6 +75,8 @@ I like that I don't know. Most days, the Capella contains traces of people more 
 
 What interests me is that spaces like this once existed everywhere.
 
+{% include mental_pause.html %}
+
 We tend to think of homes as private spaces and public life as something that happens elsewhere. But that division is relatively recent. For much of history, houses were more porous. Travelers arrived. Neighbors wandered in. Work happened at home. Commerce happened at home. Hospitality happened at home.
 
 Many cultures developed spaces that sat between public and private. The Japanese engawa (縁側). The British public house. Porches, courtyards, workshops, porticos.
@@ -92,6 +94,8 @@ Because it asks a similar question.
 What happens when a space is available?
 
 Not reserved. Not programmed. Just available.
+
+{% include mental_pause.html %}
 
 The sociologist Ray Oldenburg argued that healthy societies depend on "third places": spaces distinct from home and work where informal social life can flourish. Cafés, pubs, barber shops, and public squares have traditionally fulfilled this role.
 
@@ -145,6 +149,8 @@ Waiting.
 
 Maybe somebody will discover what it wants to become.
 
+{% include mental_pause.html %}
+
 Near the stove there is a pile of river stones.
 
 At some point I left them there without much thought.
@@ -194,6 +200,8 @@ Visitors stacked stones.
 None of these contributions are large. Most are barely noticeable.
 
 But together they have created something.
+
+{% include mental_pause.html %}
 
 I sometimes wonder whether the Capella exists because of a need in the village or because of a bias in my own thinking.
 
