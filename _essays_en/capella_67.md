@@ -19,10 +19,6 @@ footer_image: "/assets/images/capella_67.jpg"
 footer_image_alt: "Capella 67"
 ---
 
-Capella 67
-
-Still becoming. Always open.
-
 Walking through Tel Aviv, listening to a podcast about a house in Los Angeles, I felt I was hearing the story of a relative.
 
 The house could not have been more different from ours in Ramello. Different continent, different architecture, different community. Yet I recognized something immediately.
