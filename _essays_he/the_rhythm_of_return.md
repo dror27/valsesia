@@ -11,6 +11,7 @@ translation_key: the_rhythm_of_return
 related_reading:
   - title: "Be Here To Love Me (סרט)"
     url: "https://www.youtube.com/watch?v=BADaK_1VfnI"
+audio_file: the_rhythm_of_return.mp3
 ---
 
 הגירה מתחילה הרבה לפני מפות, דרכונים או מדינות. היא מתחילה בטמפרטורה. בעשב. בהתעייפות האיטית של עמק אחד ובהבטחה של עמק אחר.
