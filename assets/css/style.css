@@ -455,6 +455,7 @@ button:focus-visible {
 .audio-seek {
   --seek-progress: 0%;
   --buffered-progress: 0%;
+  --seek-gradient-direction: to right;
   flex: 1 1 180px;
   min-width: 140px;
   appearance: none;
@@ -462,7 +463,7 @@ button:focus-visible {
   border-radius: 999px;
   border: 1px solid color-mix(in oklab, var(--border) 86%, white);
   background: linear-gradient(
-    to right,
+    var(--seek-gradient-direction),
     var(--accent) 0,
     var(--accent) var(--seek-progress),
     color-mix(in oklab, var(--accent) 26%, var(--paper)) var(--seek-progress),
@@ -473,10 +474,14 @@ button:focus-visible {
   cursor: pointer;
 }
 
+[dir="rtl"] .audio-seek {
+  --seek-gradient-direction: to left;
+}
+
 .essay-audio-controls.is-loading .audio-seek {
   background:
     linear-gradient(
-      to right,
+      var(--seek-gradient-direction),
       var(--accent) 0,
       var(--accent) var(--seek-progress),
       color-mix(in oklab, var(--accent) 26%, var(--paper)) var(--seek-progress),
