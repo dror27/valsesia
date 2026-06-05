@@ -15,6 +15,8 @@ related_reading:
     url: "https://en.wikipedia.org/wiki/Third_place"
   - title: "Capella 67 - Deep Dive (audio)"
     url: "https://soundcloud.com/drorkessler/capella-67"
+  - title: "Ray Oldenburg, discusses The Third Place concept (video)"
+    ur: "https://www.youtube.com/watch?v=5h5YFimOOlU"
 footer_image: "/assets/images/capella_67.jpg"
 footer_image_alt: "Capella 67"
 ---
